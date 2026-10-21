@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica del Subjuntivo - Nivel B2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 { color: #2c3e50; }
+        .section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .question { margin-bottom: 20px; }
+        .question label { font-weight: bold; }
+        .context-text { line-height: 2; font-size: 1.1em; }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 180px;
+            margin: 0 5px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover { background-color: #2980b9; }
+        .feedback {
+            display: none;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        
+        /* 悬浮键盘样式 */
+        .keyboard {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .keyboard-title {
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .key {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 2px;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            cursor: pointer;
+            user-select: none;
+            font-weight: bold;
+        }
+        .key:hover { background: #d5dbdb; }
+    </style>
+</head>
+<body>
+
+    <h1>Práctica Intensiva: Los 4 Tiempos del Subjuntivo</h1>
+    <p>Esta prueba diagnóstica está diseñada para evaluar tu dominio de los cuatro tiempos del subjuntivo. Presta atención a las reglas de acentuación y a la concordancia temporal.</p>
+
+    <!-- 部分一：专项变位 -->
+    <div class="section" id="part1">
+        <h2>Parte 1: Conjugación Pura (Formas y Ortografía)</h2>
+        <p>Conjuga los verbos entre paréntesis en el tiempo del subjuntivo indicado.</p>
+        
+        <div class="question">
+            <label>1. Presente (Ortografía): empezar (nosotros) -> </label>
+            <input type="text" id="q1" data-answer="empecemos">
+            <div class="feedback" id="fb-q1"><strong>Explicación:</strong> Cambio ortográfico Z -> C ante la 'e'. (empecemos)</div>
+        </div>
+
+        <div class="question">
+            <label>2. Presente (Irregular): saber (yo) -> </label>
+            <input type="text" id="q2" data-answer="sepa">
+            <div class="feedback" id="fb-q2"><strong>Explicación:</strong> Verbo totalmente irregular en presente de subjuntivo. (sepa)</div>
+        </div>
+
+        <div class="question">
+            <label>3. Pretérito Perfecto (Participio irregular): decir (tú) -> </label>
+            <input type="text" id="q3" data-answer="hayas dicho">
+            <div class="feedback" id="fb-q3"><strong>Explicación:</strong> Haber en presente de subjuntivo (hayas) + participio irregular de decir (dicho).</div>
+        </div>
+
+        <div class="question">
+            <label>4. Pretérito Imperfecto (Acentuación): traducir (nosotros) -> </label>
+            <input type="text" id="q4" data-answer="tradujéramos|tradujésemos">
+            <div class="feedback" id="fb-q4"><strong>Explicación:</strong> Raíz del indefinido (tradujeron). ¡La forma de nosotros siempre lleva tilde en la vocal anterior a -ramos/-semos! (tradujéramos / tradujésemos)</div>
+        </div>
+
+        <div class="question">
+            <label>5. Pretérito Pluscuamperfecto: hacer (ellos) -> </label>
+            <input type="text" id="q5" data-answer="hubieran hecho|hubiesen hecho">
+            <div class="feedback" id="fb-q5"><strong>Explicación:</strong> Haber en imperfecto de subjuntivo + participio irregular. (hubieran/hubiesen hecho)</div>
+        </div>
+        
+        <div class="question">
+            <label>6. Pretérito Imperfecto (Cambio vocálico): dormir (él) -> </label>
+            <input type="text" id="q6" data-answer="durmiera|durmiese">
+            <div class="feedback" id="fb-q6"><strong>Explicación:</strong> La raíz viene de "durmieron". Cambio O -> U. (durmiera / durmiese)</div>
+        </div>
+    </div>
+
+    <!-- 部分二：语境填空 -->
+    <div class="section" id="part2">
+        <h2>Parte 2: El Subjuntivo en Contexto (Carta)</h2>
+        <p>Lee la siguiente carta y rellena los huecos con el tiempo del subjuntivo adecuado <strong>(Presente, Pretérito Perfecto, Pretérito Imperfecto o Pretérito Pluscuamperfecto)</strong>, según la lógica y la concordancia temporal.</p>
+        
+        <div class="context-text">
+            Querida Laura:<br><br>
+            Me alegró muchísimo que 
+            <strong>7. (venir, tú)</strong> <input type="text" id="q7" data-answer="vinieras|vinieses"> 
+            a visitarme las pasadas Navidades. <br>
+            Espero que ahora ya 
+            <strong>8. (recuperarse, tú)</strong> <input type="text" id="q8" data-answer="te hayas recuperado"> 
+            del todo del resfriado que cogiste aquí (ya que han pasado dos semanas).<br>
+            Te escribo porque necesito que me 
+            <strong>9. (enviar, tú)</strong> <input type="text" id="q9" data-answer="envíes"> 
+            los documentos del proyecto antes de este viernes.<br>
+            Ayer me molestó que el director no 
+            <strong>10. (aceptar)</strong> <input type="text" id="q10" data-answer="aceptara|aceptase"> 
+            nuestra propuesta en la reunión.<br>
+            No creo que para el mes que viene ellos ya 
+            <strong>11. (terminar)</strong> <input type="text" id="q11" data-answer="hayan terminado"> 
+            de revisar todo el presupuesto, van muy lentos.<br>
+            La verdad es que, si nosotros 
+            <strong>12. (saber)</strong> <input type="text" id="q12" data-answer="hubiéramos sabido|hubiésemos sabido"> 
+            que iba a ser tan complicado el año pasado, habríamos rechazado este trabajo.<br><br>
+            Un abrazo,<br>Elena
+        </div>
+        
+        <div class="feedback" id="fb-q7"><strong>7:</strong> <em>vinieras / vinieses</em>. Verbo principal en pasado (alegró), y la acción subordinada también es en el pasado (Navidades). Imperfecto de subjuntivo.</div>
+        <div class="feedback" id="fb-q8"><strong>8:</strong> <em>te hayas recuperado</em>. Verbo principal en presente (espero). La acción es un pasado reciente o una acción ya terminada con relevancia en el presente (han pasado dos semanas). Perfecto de subjuntivo.</div>
+        <div class="feedback" id="fb-q9"><strong>9:</strong> <em>envíes</em>. Verbo principal en presente (necesito) apuntando a una acción futura (antes del viernes). Presente de subjuntivo. Cuidado con la tilde.</div>
+        <div class="feedback" id="fb-q10"><strong>10:</strong> <em>aceptara / aceptase</em>. Sentimiento en pasado (molestó) sobre una acción en pasado (ayer). Imperfecto.</div>
+        <div class="feedback" id="fb-q11"><strong>11:</strong> <em>hayan terminado</em>. Negación de creencia (No creo que) en presente, refiriéndose a una acción que estará "ya terminada" en un límite temporal futuro (para el mes que viene ya...). Perfecto de subjuntivo.</div>
+        <div class="feedback" id="fb-q12"><strong>12:</strong> <em>hubiéramos / hubiésemos sabido</em>. Oración condicional irreal del pasado (Tercer condicional). "El año pasado" indica que es imposible cambiarlo, por lo tanto Pluscuamperfecto de subjuntivo (condición) + condicional compuesto (consecuencia). Cuidado con la tilde en hubiéramos.</div>
+    </div>
+
+    <button onclick="checkAnswers()">Evaluar mis respuestas</button>
+
+    <!-- 特殊字符虚拟键盘 -->
+    <div class="keyboard">
+        <div class="keyboard-title">Tildes (Haz clic para insertar)</div>
+        <div class="key" onclick="insertChar('á')">á</div>
+        <div class="key" onclick="insertChar('é')">é</div>
+        <div class="key" onclick="insertChar('í')">í</div>
+        <div class="key" onclick="insertChar('ó')">ó</div>
+        <div class="key" onclick="insertChar('ú')">ú</div>
+        <div class="key" onclick="insertChar('ñ')">ñ</div>
+    </div>
+
+    <script>
+        // 记录最后聚焦的输入框，用于插入特殊字符
+        let lastFocusedInput = null;
+        
+        document.querySelectorAll('input[type="text"]').forEach(input => {
+            input.addEventListener('focus', function() {
+                lastFocusedInput = this;
+            });
+        });
+
+        function insertChar(char) {
+            if (lastFocusedInput) {
+                const start = lastFocusedInput.selectionStart;
+                const end = lastFocusedInput.selectionEnd;
+                const text = lastFocusedInput.value;
+                lastFocusedInput.value = text.substring(0, start) + char + text.substring(end);
+                lastFocusedInput.focus();
+                lastFocusedInput.selectionStart = lastFocusedInput.selectionEnd = start + 1;
+            }
+        }
+
+        function checkAnswers() {
+            let correctCount = 0;
+            const totalQuestions = 12;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const input = document.getElementById('q' + i);
+                const feedback = document.getElementById('fb-q' + i);
+                
+                // 去除首尾空格并转换为小写
+                const userAnswer = input.value.trim().toLowerCase(); 
+                
+                // 支持多答案（例如 -ra 和 -se 两种变位均可）
+                const correctAnswers = input.getAttribute('data-answer').split('|');
+                
+                feedback.style.display = 'block';
+                input.classList.remove('correct', 'incorrect');
+                feedback.classList.remove('correct', 'incorrect');
+
+                if (correctAnswers.includes(userAnswer)) {
+                    input.classList.add('correct');
+                    feedback.classList.add('correct');
+                    feedback.innerHTML = "<strong>¡Correcto!</strong> " + feedback.innerHTML;
+                    correctCount++;
+                } else {
+                    input.classList.add('incorrect');
+                    feedback.classList.add('incorrect');
+                    feedback.innerHTML = "<strong>Incorrecto.</strong> Tu respuesta: <em>" + (userAnswer || "(vacío)") + "</em>.<br>" + feedback.innerHTML;
+                }
+            }
+
+            // 滚动到顶部提示分数
+            setTimeout(() => {
+                alert(`¡Evaluación terminada!\nHas acertado ${correctCount} de ${totalQuestions} preguntas.\nRevisa las explicaciones en color verde y rojo.`);
+            }, 100);
+        }
+    </script>
+</body>
+</html>
